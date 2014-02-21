@@ -1,0 +1,18 @@
+<button type="button" class="btn btn-success btn-lg" ng-click="create()">Create new</button>
+
+<h3>Existing {{noun}}</h3>
+<div ng-show="list.length===0" class="alert alert-info">
+	Nothing added yet
+</div>
+<div ng-repeat="c in list track by $index" style="margin-top:10px;">
+	<button type="button" class="btn btn-primary" ng-click="edit(c)">edit</button>
+	<span>{{c[friendlyAttr]}}</span>
+</div>
+<hr>
+<form method="POST" role="form" ng-show="op">
+	<div class="form-group" ng-repeat="(key, value) in workingItem">
+		<label>{{key}}</label>
+		<input type="text" class="form-control" ng-model="workingItem[key]">
+	</div>
+	<button type="submit" class="btn btn-primary" ng-click="submit(workingItem)">Submit</button>
+</form>
