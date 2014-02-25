@@ -4,7 +4,8 @@ angular.module('confrontApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngGrid'
 ])
   .config(function($routeProvider, $httpProvider) {
     $httpProvider.defaults.useXDomain = true;
@@ -38,6 +39,46 @@ angular.module('confrontApp', [
       .when('/ajendas', {
         templateUrl: 'views/crudui.html',
         controller: 'AjendasCtrl'
+      })
+      .when('/associate', {
+        templateUrl: 'views/associate.html',
+        controller: 'AssociateCtrl'
+      })
+      .when('/conferenceSponsor', {
+        templateUrl: 'views/associate.html',
+        controller: 'ConferencesponsorCtrl'
+      })
+      .when('/conferenceSpeaker', {
+        templateUrl: 'views/associate.html',
+        controller: 'ConferencespeakerCtrl'
+      })
+      .when('/conferenceBooth', {
+        templateUrl: 'views/associate.html',
+        controller: 'ConferenceboothCtrl'
+      })
+      .when('/agenda', {
+        templateUrl: 'views/agenda.html',
+        controller: 'AgendaCtrl'
+      })
+      .when('/tracks', {
+        templateUrl: 'views/tracks.html',
+        controller: 'TracksCtrl'
+      })
+      .when('/event', {
+        templateUrl: 'views/event.html',
+        controller: 'EventCtrl'
+      })
+      .when('/events', {
+        templateUrl: 'views/events.html',
+        controller: 'EventsCtrl'
+      })
+      .when('/eventSpeaker', {
+        templateUrl: 'views/associate.html',
+        controller: 'EventspeakerCtrl'
+      })
+      .when('/videos', {
+        templateUrl: 'views/crudui.html',
+        controller: 'VideosCtrl'
       })
       .otherwise({
         redirectTo: '/'

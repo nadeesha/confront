@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('confrontApp')
-  .controller('AjendasCtrl', function ($scope) {
+  .controller('EventCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

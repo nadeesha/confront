@@ -1,0 +1,36 @@
+Select your conference:
+<select class="form-control" ng-model="conference" ng-options="c.name for c in conferences">
+</select>
+
+Select your agenda:
+<select class="form-control" ng-model="agenda" ng-options="c.name for c in agendas">
+</select>
+
+Select your track:
+<select class="form-control" ng-model="track" ng-options="c.name for c in tracks">
+</select>
+
+<hr>
+
+<!-- crudui -->
+
+<button type="button" class="btn btn-success btn-lg" ng-click="create()">Create new</button>
+
+<h3>Existing {{noun}}</h3>
+<div ng-show="list.length===0" class="alert alert-info">
+	Nothing added yet
+</div>
+<div ng-repeat="c in list track by $index" style="margin-top:10px;">
+	<button type="button" class="btn btn-primary" ng-click="edit(c)">edit</button>
+	<span>{{c[friendlyAttr]}}</span>
+</div>
+<hr>
+<form method="POST" role="form" ng-show="op">
+	<div class="form-group" ng-repeat="(key, value) in workingItem">
+		<label>{{key}}</label>
+		<input type="text" class="form-control" ng-model="workingItem[key]">
+	</div>
+	<button type="submit" class="btn btn-primary" ng-click="submit(workingItem)">Submit</button>
+</form>
+
+<!-- crudui -->

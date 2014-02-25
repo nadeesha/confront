@@ -1,0 +1,21 @@
+<select class="form-control" ng-model="selectedParent" ng-options="c.name for c in parents">
+</select>
+
+<hr>
+
+<div class="alert alert-warning" ng-show="chosenChildren.length===0">
+    No children to show
+</div>
+<div ng-repeat="c in chosenChildren track by $index">
+    {{c.name}}
+</div>
+
+<hr>
+
+<select class="form-control" ng-model="selectedChild" ng-options="c[meta.childEntityFriendlyAttr || 'name'] for c in allChildren">
+</select>
+
+<br/>
+<br/>
+
+<button ng-show="selectedParent.name && selectedChild[meta.childEntityFriendlyAttr || 'name']" type="button" class="btn btn-primary" ng-click="associate()">Associate {{selectedParent.name}} with {{selectedChild[meta.childEntityFriendlyAttr || 'name']}}</button>

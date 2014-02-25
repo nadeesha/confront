@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -17,6 +16,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.min.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
@@ -46,11 +46,36 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#/conferences">Conferences</a></li>
-                    <li><a href="#/speakers">Speakers</a></li>
-                    <li><a href="#/sponsors">Sponsors</a></li>
-                    <li><a href="#/eventtype">Event types</a></li>
-                    <li><a href="#/booths">Booths</a></li>
+                    <li><a href="#/conferences">Conferences</a>
+                    </li>
+                    <li><a href="#/speakers">Speakers</a>
+                    </li>
+                    <li><a href="#/sponsors">Sponsors</a>
+                    </li>
+                    <li><a href="#/eventtype">Event types</a>
+                    </li>
+                    <li><a href="#/booths">Booths</a>
+                    </li>
+                    <li><a href="#/agenda">Agendas</a>
+                    </li>
+                    <li><a href="#/tracks">Tracks</a>
+                    </li>
+                    <li><a href="#/events">Events</a>
+                    </li>
+                    <li><a href="#/videos">Videos</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Associate <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/conferenceSponsor">Conference -> Sponsors</a>
+                            </li>
+                            <li><a href="#/conferenceBooth">Conference -> Booths</a>
+                            </li>
+                            <li><a href="#/eventSpeaker">Speaker -> Event</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -92,6 +117,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ng-grid/ng-grid-2.0.7.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -105,7 +131,17 @@
     <script src="scripts/controllers/eventtype.js"></script>
     <script src="scripts/controllers/booths.js"></script>
     <script src="scripts/services/crudSvc.js"></script>
-    <script src="scripts/controllers/ajendas.js"></script>
+    <script src="scripts/controllers/associate.js"></script>
+    <script src="scripts/services/associateSvc.js"></script>
+    <script src="scripts/controllers/conferenceSponsor.js"></script>
+    <script src="scripts/controllers/conferenceSpeaker.js"></script>
+    <script src="scripts/controllers/conferenceBooth.js"></script>
+    <script src="scripts/controllers/agenda.js"></script>
+    <script src="scripts/controllers/tracks.js"></script>
+    <script src="scripts/controllers/event.js"></script>
+    <script src="scripts/controllers/events.js"></script>
+    <script src="scripts/controllers/eventSpeaker.js"></script>
+    <script src="scripts/controllers/videos.js"></script>
     <!-- endbuild -->
 </body>
 
