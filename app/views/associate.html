@@ -7,7 +7,7 @@
     No children to show
 </div>
 <div ng-repeat="c in chosenChildren track by $index">
-    {{c.name}}
+    {{c.name || c.title}}
 </div>
 
 <hr>

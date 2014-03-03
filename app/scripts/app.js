@@ -5,9 +5,11 @@ angular.module('confrontApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngGrid'
+  'ngGrid',
+  'chieffancypants.loadingBar',
+  'ngCookies'
 ])
-  .config(function($routeProvider, $httpProvider) {
+  .config(function($routeProvider, $httpProvider, $provide) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -80,8 +82,39 @@ angular.module('confrontApp', [
         templateUrl: 'views/crudui.html',
         controller: 'VideosCtrl'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+
+    // $provide.factory('default', function($q, $location, $cookies) {
+    //   return {
+    //     // optional method
+    //     'responseError': function(rejection) {
+    //       if (rejection.status === 401) {
+    //         $location.url('/login');
+
+    //       }
+
+    //       return $q.reject(rejection);
+    //     },
+
+    //     'request': function(config) {
+    //       if ($cookies.token) {
+    //         config.headers.Authorization = 'Bearer ' + $cookies.token.access_token;
+    //         return config;
+    //       } else {
+    //         $location.url('/login');
+    //         return config;
+    //       }
+    //     }
+    //   };
+    // });
+
+    // $httpProvider.interceptors.push('default');
   })
-  .constant('API', 'http://127.0.0.1:9763/con_api');
+  .constant('API', 'http://204.13.82.236:9763/con_api')
+  .constant('OAUTH_ENDPOINT', '');
