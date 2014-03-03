@@ -1,6 +1,11 @@
-# Instructions
+=======
+confront
+========
 
-* Pull the whole repo
-* cd into the directory
-* change the constant `API` in `./app/app.js` to reflect the API endpoint
-* run the server. ex: `python -m SimpleHTTPServer 4000`
+# Set up
+
+* Change the backend API endpoint in `app.js`. It's under constant `API`.
+* `CD` to the root directory.
+* run `python -m SimpleHTTPServer 8765` (You need to have python)
+* goto `http://localhost:8765/app`
+* Profit!
