@@ -116,4 +116,4 @@ angular.module('confrontApp', [
     // $httpProvider.interceptors.push('default');
   })
   .constant('API', 'http://204.13.82.236:9763/con_api')
-  .constant('OAUTH_ENDPOINT', '');
+  .constant('OAUTH_ENDPOINT', 'https://204.13.82.236:8243/token');

@@ -11,9 +11,17 @@ angular.module('confrontApp')
 					username: u,
 					password: p,
 					scope: 'PRODUCTION'
+				},
+				headers: {
+					'Authorization': 'Basic UE50QzJOQUpTQWRiZnltal9HZGpvc09FeHJnYToyWWpSYVBuMXdBcVhLb2RrenQzcmVjNWpfa1lh',
+					'Content-Type': 'application/x-www-form-urlencoded'
 				}
 			}).success(function (data) {
+				console.log(data);
 				$cookies.token = data;
+			}).error(function (data) {
+				console.log('error logging in!');
+				console.log(data);
 			})
 		};
 	});
