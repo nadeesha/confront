@@ -89,31 +89,21 @@ angular.module('confrontApp', [
         redirectTo: '/'
       });
 
-    // $provide.factory('default', function($q, $location, $cookies) {
-    //   return {
-    //     // optional method
-    //     'responseError': function(rejection) {
-    //       if (rejection.status === 401) {
-    //         $location.url('/login');
+    $provide.factory('default', function($q, $location, $cookies) {
+      return {
+        'request': function(config) {
+          if ($cookies.token) {
+            config.headers.Authorization = 'Bearer ' + $cookies.token;
+            return config;
+          } else {
+            $location.url('/');
+            return config;
+          }
+        }
+      };
+    });
 
-    //       }
-
-    //       return $q.reject(rejection);
-    //     },
-
-    //     'request': function(config) {
-    //       if ($cookies.token) {
-    //         config.headers.Authorization = 'Bearer ' + $cookies.token.access_token;
-    //         return config;
-    //       } else {
-    //         $location.url('/login');
-    //         return config;
-    //       }
-    //     }
-    //   };
-    // });
-
-    // $httpProvider.interceptors.push('default');
+    $httpProvider.interceptors.push('default');
   })
   .constant('API', 'http://204.13.82.236:9763/con_api')
   .constant('OAUTH_ENDPOINT', 'https://204.13.82.236:8243/token');

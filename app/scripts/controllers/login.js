@@ -13,7 +13,7 @@ angular.module('confrontApp')
 					scope: 'PRODUCTION'
 				},
 				headers: {
-					'Authorization': 'Basic UE50QzJOQUpTQWRiZnltal9HZGpvc09FeHJnYToyWWpSYVBuMXdBcVhLb2RrenQzcmVjNWpfa1lh',
+					'Authorization': 'Basic OEE1dDQ4YmRxNHVVbDh5bms4S0FURWNBOWJ3YTpFaGZQUllCRG12WnlmYTYyVmxBQ01oZ0FGMWth',
 					'Content-Type': 'application/x-www-form-urlencoded'
 				}
 			}).success(function (data) {
