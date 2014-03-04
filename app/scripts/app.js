@@ -5,7 +5,6 @@ angular.module('confrontApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngGrid',
   'chieffancypants.loadingBar',
   'ngCookies'
 ])
