@@ -29,6 +29,14 @@ angular.module('confrontApp')
 					scope.workingItem = definition;
 				};
 
+				scope.determineType = function(name) {
+					if (name.toUpperCase().indexOf('DATE') > -1) {
+						return 'datetime-local';
+					} else {
+						return 'text';
+					}
+				}
+
 				scope.submit = function(c) {
 					if (scope.op === 'edit') {
 						$http.put(API + '/' + endpoint + '/' + c.id, c)

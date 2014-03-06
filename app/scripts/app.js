@@ -85,6 +85,10 @@ angular.module('confrontApp', [
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .when('/eventcategory', {
+        templateUrl: 'views/crudui.html',
+        controller: 'EventcategoryCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
