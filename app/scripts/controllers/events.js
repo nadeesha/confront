@@ -41,7 +41,8 @@ angular.module('confrontApp')
 					eventTypeId: '',
 					fromDateTime: '',
 					toDateTime: '',
-					isCrossTrack: ''
+					isCrossTrack: '',
+					eventCategoryId: ''
 				};
 
 				Crudsvc.setupScope($scope, noun, definition);
