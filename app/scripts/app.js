@@ -93,7 +93,7 @@ angular.module('confrontApp', [
         redirectTo: '/'
       });
 
-    $provide.factory('default', function($q, $location, $cookies) {
+    $provide.factory('default', function($q, $location, $cookies, $rootScope, $timeout) {
       return {
         'request': function(config) {
           if ($cookies.token) {
@@ -103,7 +103,19 @@ angular.module('confrontApp', [
             $location.url('/');
             return config;
           }
-        }
+        },
+
+        'responseError': function(rejection) {
+            $rootScope.errorMsg = rejection;
+
+            console.log(rejection);
+
+            $timeout(function(){
+              $rootScope.errorMsg = null;
+            }, 5000);
+
+            return $q.reject(rejection);
+          }
       };
     });
 
